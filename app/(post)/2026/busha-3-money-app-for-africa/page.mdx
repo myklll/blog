@@ -1,3 +1,6 @@
+import Image from "next/image";
+import heroImage from "../../../../public/images/busha-3/hero.png";
+
 export const metadata = {
   title: "Busha 3.0: The Money App for Africa",
   description: "For most Africans, finance has never lived in one place. Busha 3.0 changes that.",
@@ -7,6 +10,13 @@ export const metadata = {
     images: [{ url: "/og/busha-3-money-app-for-africa" }],
   },
 };
+
+<Image
+  src={heroImage}
+  alt="Busha 3.0"
+  className="rounded-lg mt-6 mb-8"
+  priority
+/>
 
 For most Africans, finance has never lived in one place.
 

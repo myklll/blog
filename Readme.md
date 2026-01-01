@@ -1,6 +1,6 @@
 # blog
 
-This is the blog that powers `rauchg.com`, built on
+This is the blog that powers `michaeladeyeri.com`, built on
 [next.js](https://nextjs.org/) and
 deployed to the cloud via [Vercel](https://vercel.com).
 
@@ -45,7 +45,7 @@ These components make up the _style guide_ of the application.
 
 ### Blog posts
 
-Every blog post is a static page hosted under `pages/$year/`.
+Every blog post is a static page hosted under `app/(post)/$year/`.
 
 This allows every post to load arbitrary modules, have custom layouts
 and take advantage of automatic code splitting and lazy loading.
@@ -53,5 +53,5 @@ and take advantage of automatic code splitting and lazy loading.
 This means that the bloat of a single post doesn't "rub off on" the
 rest of the site.
 
-An index of all posts is maintained in JSON format as `./posts.json`
+An index of all posts is maintained in JSON format as `./app/posts.json`
 for practical reasons.
