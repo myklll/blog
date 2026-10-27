@@ -30,16 +30,13 @@ This is the equivalent of submitting a PR with the [GitHub integration](https://
 vc --prod
 ```
 
-This is the equivalent of `git push` to `master` (or merging a PR to master)
+This is the equivalent of `git push` to `main` (or merging a PR to main)
 
 ## Architecture
 
 ### Pure components
 
-Every stateless pure component is found under `./components`.
-
-Every component that has to do with styling the post's markup
-is found under `./components/post/`
+Shared components live under `./app/(post)/components`.
 
 These components make up the _style guide_ of the application.
 

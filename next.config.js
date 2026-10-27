@@ -20,28 +20,6 @@ module.exports = withMDX({
         port: "",
         pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "m.media-amazon.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "images-na.ssl-images-amazon.com",
-        port: "",
-        pathname: "/**",
-        search: "",
-      },
     ],
-  },
-  redirects() {
-    return [
-      {
-        source: "/essays/:nested*",
-        destination: "/",
-        permanent: true,
-      },
-    ];
   },
 });
