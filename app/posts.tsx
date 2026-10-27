@@ -43,7 +43,7 @@ function List({ posts }) {
               `}
               >
                 <span
-                  className={`py-2 flex grow items-center ${
+                  className={`py-2 flex grow items-start ${
                     !firstOfYear ? "ml-10 md:ml-14" : ""
                   }`}
                 >
@@ -54,12 +54,12 @@ function List({ posts }) {
                   )}
 
                   <span className="grow dark:text-gray-100">
-                    <span className="group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700 transition-all rounded-xl py-0.5 px-1.5">
+                    <span className="group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700 transition-all rounded-xl py-0.5 px-1.5 box-decoration-clone">
                       {post.title}
                     </span>
                   </span>
 
-                  <span className="text-neutral-500 dark:text-neutral-500 text-xs mt-0.5">
+                  <span className="shrink-0 pl-3 text-neutral-500 dark:text-neutral-500 text-xs mt-0.5">
                     {post.viewsFormatted}
                   </span>
                 </span>
