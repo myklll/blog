@@ -1,12 +1,29 @@
+import Image from "next/image";
+import heroLight from "../../../../public/images/ngnb/hero-light.png";
+import heroDark from "../../../../public/images/ngnb/hero-dark.png";
+
 export const metadata = {
   title: "Introducing NGNb: Building the Next Layer of Financial Infrastructure",
   description: "NGNb is a Naira-backed stablecoin designed to make the Nigerian Naira available for transactions across digital financial platforms.",
   openGraph: {
     title: "Introducing NGNb: Building the Next Layer of Financial Infrastructure",
     description: "NGNb is a Naira-backed stablecoin designed to make the Nigerian Naira available for transactions across digital financial platforms.",
-    images: [{ url: "/og/introducing-ngnb" }],
+    images: [{ url: "/images/ngnb/hero-dark.png", width: 3840, height: 2160 }],
   },
 };
+
+<Image
+  src={heroLight}
+  alt="NGNb"
+  className="rounded-lg mt-6 mb-8 border border-neutral-200 dark:hidden"
+  priority
+/>
+<Image
+  src={heroDark}
+  alt="NGNb"
+  className="rounded-lg mt-6 mb-8 hidden dark:block"
+  priority
+/>
 
 When we launched Busha, our focus was simple: make it easier and safer for Africans to buy, sell and use digital assets. Over the years, we've learned that what people really want isn't necessarily cryptocurrency itself, but better ways to manage and move their money.
 
