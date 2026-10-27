@@ -1,5 +1,4 @@
 import Image from "next/image";
-import heroLight from "../../../../public/images/ngnb/hero-light.png";
 import heroDark from "../../../../public/images/ngnb/hero-dark.png";
 
 export const metadata = {
@@ -13,15 +12,9 @@ export const metadata = {
 };
 
 <Image
-  src={heroLight}
-  alt="NGNb"
-  className="rounded-lg mt-6 mb-8 border border-neutral-200 dark:hidden"
-  priority
-/>
-<Image
   src={heroDark}
   alt="NGNb"
-  className="rounded-lg mt-6 mb-8 hidden dark:block"
+  className="rounded-lg mt-6 mb-8"
   priority
 />
 
