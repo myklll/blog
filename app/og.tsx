@@ -2,8 +2,9 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
 
-// Shared share-card (Open Graph) design, in the site's newspaper style: Cravelo display
-// type, Geist Serif body, ink on paper, the scanned portrait. 1200×630.
+// Post share cards (Open Graph), in the site's newspaper style: Cravelo display type,
+// Geist Serif body, ink on paper. 1200×630. (Home and About use a static scanned photo,
+// public/images/og-home.jpg.)
 
 const INK = "#1b1a17";
 const PAPER = "#f7f6f2";
@@ -12,9 +13,6 @@ const fonts = join(process.cwd(), "fonts");
 const cravelo = readFileSync(join(fonts, "Cravelo DEMO.otf"));
 // Geist Serif ships as woff2 only, which the image renderer can't read; this is a TTF copy
 const geistSerif = readFileSync(join(fonts, "geist-serif-regular.ttf"));
-const portrait = `data:image/jpeg;base64,${readFileSync(
-  join(process.cwd(), "public/images/og-portrait.jpg")
-).toString("base64")}`;
 
 const size = { width: 1200, height: 630 };
 const options = {
@@ -44,40 +42,6 @@ function Wordmark({ fontSize }: { fontSize: number }) {
     >
       <div style={{ display: "flex", ...trim }}>MICHAEL</div>
     </div>
-  );
-}
-
-// home and profile: the front page in miniature
-export function profileCard() {
-  return new ImageResponse(
-    (
-      <div style={{ display: "flex", width: "100%", height: "100%", background: PAPER, color: INK, padding: 48, gap: 40 }}>
-        <div style={{ display: "flex", flexDirection: "column", width: 664, justifyContent: "space-between" }}>
-          <Wordmark fontSize={222} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-            <div style={{ display: "flex", fontFamily: "Cravelo", fontSize: 50, lineHeight: 1.05 }}>
-              FOUNDER &amp; CEO, BUSHA. BUILDING A SINGLE MONEY APP FOR AFRICA.
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                borderTop: `2px solid ${INK}`,
-                paddingTop: 16,
-                fontFamily: "Geist Serif",
-                fontSize: 24,
-              }}
-            >
-              <span>Michael Adeyeri</span>
-              <span>michaeladeyeri.com</span>
-            </div>
-          </div>
-        </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={portrait} width={400} height={534} style={{ objectFit: "cover" }} />
-      </div>
-    ),
-    options
   );
 }
 

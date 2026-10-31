@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     siteName: "Michael Adeyeri",
     title: "Michael Adeyeri: CEO of Busha",
     description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Michael Adeyeri" }],
+    images: [{ url: "/images/og-home.jpg", width: 1200, height: 630, alt: "Michael Adeyeri" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@michael_adeyeri",
     creator: "@michael_adeyeri",
-    images: ["/opengraph-image"],
+    images: ["/images/og-home.jpg"],
   },
 };
 
