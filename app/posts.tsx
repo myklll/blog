@@ -94,9 +94,11 @@ function ProfileLink() {
 
 function Latest({ posts }: { posts: Post[] }) {
   return (
-    <div className="pt-6 md:pt-4">
-      <h2 className="font-display uppercase text-center text-6xl md:text-7xl leading-none pb-4 border-b border-ink">
-        Latest
+    <div>
+      {/* equal space above and below the letters: the line box is trimmed to the glyph
+       * ink (as in Masthead), so the padding is the only space */}
+      <h2 className="font-display uppercase text-center text-6xl md:text-7xl py-6 border-b border-ink">
+        <span className="block leading-none mt-[-0.09em] mb-[-0.13em]">Latest</span>
       </h2>
 
       <ul>
