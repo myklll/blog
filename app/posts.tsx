@@ -61,7 +61,7 @@ function Front() {
           />
           {/* desktop: the profile link drops to the bottom edge of the image; it's the only
            * link here, and the only thing that triggers the arrow spin */}
-          <figcaption className="shrink-0 mt-3 md:mt-0 flex flex-col justify-between gap-4 font-display uppercase text-2xl md:text-[2.25rem] leading-[1.05]">
+          <figcaption className="shrink-0 mt-3 md:mt-0 flex flex-col justify-between gap-4 font-display uppercase text-[2rem] md:text-[2.25rem] leading-[1.05]">
             <span>
               <span data-intro="rise" className="block">Founder &amp; CEO, Busha. Building a single money app for Africa.</span>
               <span data-intro="rise" className="block mt-4 font-serif normal-case text-base md:text-lg leading-relaxed">
@@ -119,7 +119,7 @@ function LatestLink({ post }: { post: Post }) {
   return (
     <Link ref={link} href={postHref(post)} className="group block">
       {post.image && <ScanlineImage src={post.image} alt="" className="aspect-[16/9]" />}
-      <h3 className="mt-4 font-display uppercase text-2xl md:text-[2.25rem] leading-[1.05]">
+      <h3 className="mt-4 font-display uppercase text-[2rem] md:text-[2.25rem] leading-[1.05]">
         {post.title}
         {/* the no-break space keeps the arrow with the last word */}
         {"\u00a0"}
@@ -152,19 +152,19 @@ function ArchiveLink({ post }: { post: Post }) {
   useDarts(link);
   return (
     <Link ref={link} href={postHref(post)} className="group flex items-baseline gap-4 py-4">
-      <span className="grow font-display uppercase text-xl md:text-2xl leading-[1.05]">
+      <span className="grow font-display uppercase text-[1.75rem] md:text-2xl leading-[1.05]">
         {post.title}
         {"\u00a0"}
         <HoverDart />
       </span>
-      <span className="shrink-0 text-sm">{post.date}</span>
+      <span className="shrink-0 text-lg md:text-sm">{post.date}</span>
     </Link>
   );
 }
 
 function Meta({ post }: { post: Post }) {
   return (
-    <p className="mt-2 text-sm">{post.date}</p>
+    <p className="mt-2 text-lg md:text-sm">{post.date}</p>
   );
 }
 
