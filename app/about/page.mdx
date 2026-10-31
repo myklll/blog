@@ -1,11 +1,15 @@
 export const metadata = {
-  title: 'Michael Adeyeri',
-  description: 'Software engineer and CEO of Busha',
+  title: 'About',
+  description: 'Michael Adeyeri is the CEO of Busha, building a single money app for Africa. Previously early at Jumia, CTO at Surebids, and founder of Formplus and Kraks.',
+  alternates: { canonical: '/about' },
   openGraph: {
-    title: 'Michael Adeyeri',
-    description: 'Software engineer and CEO of Busha',
-    images: [{ url: '/about/opengraph-image' }]
-  }
+    type: 'profile',
+    url: '/about',
+    title: 'About Michael Adeyeri',
+    description: 'CEO of Busha, building a single money app for Africa. Previously early at Jumia, CTO at Surebids, and founder of Formplus and Kraks.',
+    images: [{ url: '/about/opengraph-image', width: 1200, height: 630, alt: 'Michael Adeyeri' }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/about/opengraph-image'] },
 }
 
 <Masthead fit={40}>About</Masthead>

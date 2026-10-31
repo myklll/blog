@@ -10,7 +10,7 @@ export async function GET() {
     <subtitle>Essays</subtitle>
     <link href="https://michaeladeyeri.com/atom" rel="self"/>
     <link href="https://michaeladeyeri.com/"/>
-    <updated>${posts[0].date}</updated>
+    <updated>${new Date(posts[0].date).toISOString()}</updated>
     <id>https://michaeladeyeri.com/</id>
     <author>
       <name>Michael Adeyeri</name>
@@ -21,10 +21,10 @@ export async function GET() {
       if (!dateMatch) return "";
       return `${acc}
         <entry>
-          <id>${post.id}</id>
+          <id>https://michaeladeyeri.com/${dateMatch[0]}/${post.id}</id>
           <title>${post.title}</title>
           <link href="https://michaeladeyeri.com/${dateMatch[0]}/${post.id}"/>
-          <updated>${post.date}</updated>
+          <updated>${new Date(post.date).toISOString()}</updated>
         </entry>`;
     }, "")}
   </feed>`,

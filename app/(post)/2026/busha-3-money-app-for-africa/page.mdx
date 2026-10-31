@@ -1,15 +1,14 @@
 import Image from "next/image";
 import heroImage from "../../../../public/images/busha-3/hero.png";
 
-export const metadata = {
+import { postMetadata } from "../../meta";
+
+export const metadata = postMetadata({
+  id: "busha-3-money-app-for-africa",
   title: "Busha 3.0: The Money App for Africa",
   description: "For most Africans, finance has never lived in one place. Busha 3.0 changes that.",
-  openGraph: {
-    title: "Busha 3.0: The Money App for Africa",
-    description: "For most Africans, finance has never lived in one place. Busha 3.0 changes that.",
-    images: [{ url: "/og/busha-3-money-app-for-africa" }],
-  },
-};
+  date: "Jan 1, 2026",
+});
 
 <Image
   src={heroImage}

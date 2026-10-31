@@ -1,15 +1,15 @@
 import Image from "next/image";
 import heroDark from "../../../../public/images/ngnb/hero-dark.png";
 
-export const metadata = {
+import { postMetadata } from "../../meta";
+
+export const metadata = postMetadata({
+  id: "introducing-ngnb",
   title: "Introducing NGNb: Building the Next Layer of Financial Infrastructure",
   description: "NGNb is a Naira-backed stablecoin designed to make the Nigerian Naira available for transactions across digital financial platforms.",
-  openGraph: {
-    title: "Introducing NGNb: Building the Next Layer of Financial Infrastructure",
-    description: "NGNb is a Naira-backed stablecoin designed to make the Nigerian Naira available for transactions across digital financial platforms.",
-    images: [{ url: "/images/ngnb/hero-dark.png", width: 3840, height: 2160 }],
-  },
-};
+  date: "Oct 27, 2026",
+  image: { url: "/images/ngnb/hero-dark.png", width: 3840, height: 2160 },
+});
 
 <Image
   src={heroDark}

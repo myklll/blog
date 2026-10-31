@@ -11,3 +11,4 @@ TODO
 fonts/*
 !fonts/init.mjs
 !fonts/Cravelo DEMO.otf
+!fonts/geist-serif-regular.ttf

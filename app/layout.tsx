@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import type { Metadata, Viewport } from "next";
+
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { GeistSerif } from "geist/font/serif";
@@ -21,28 +23,44 @@ const geistMono = Geist_Mono({
   fallback: ["ui-monospace", "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "monospace"]
 });
 
-export const metadata = {
-  title: "Michael Adeyeri's blog",
-  description:
-    "Michael Adeyeri is a software engineer and the CEO of Busha, building a single money app for Africa that brings investing, spending, and financial access into one place.",
+const description =
+  "Michael Adeyeri is the CEO of Busha, building a single money app for Africa. Writing on Busha, NGNb and financial infrastructure for Africa.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://michaeladeyeri.com"),
+  title: {
+    default: "Michael Adeyeri: CEO of Busha",
+    template: "%s | Michael Adeyeri",
+  },
+  description,
+  authors: [{ name: "Michael Adeyeri", url: "https://michaeladeyeri.com" }],
+  creator: "Michael Adeyeri",
+  alternates: {
+    canonical: "/",
+    types: { "application/atom+xml": "/atom" },
+  },
   openGraph: {
-    title: "Michael Adeyeri's blog",
-    description:
-      "Michael Adeyeri is a software engineer and the CEO of Busha, building a single money app for Africa that brings investing, spending, and financial access into one place.",
-    url: "https://michaeladeyeri.com",
-    siteName: "Michael Adeyeri's blog",
-    images: ["/opengraph-image"],
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Michael Adeyeri",
+    title: "Michael Adeyeri: CEO of Busha",
+    description,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Michael Adeyeri" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@michael_adeyeri",
     creator: "@michael_adeyeri",
+    images: ["/opengraph-image"],
   },
-  metadataBase: new URL("https://michaeladeyeri.com"),
 };
 
-export const viewport = {
-  themeColor: "transparent",
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#181715" }, // --paper in dark mode
+  ],
 };
 
 export default function RootLayout({
