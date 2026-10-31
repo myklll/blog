@@ -29,7 +29,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL("https://michaeladeyeri.com"),
   title: {
-    default: "Michael Adeyeri: CEO of Busha",
+    default: "Michael Adeyeri: CEO, Busha. Building a single money app for Africa",
     template: "%s | Michael Adeyeri",
   },
   description,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Michael Adeyeri",
-    title: "Michael Adeyeri: CEO of Busha",
+    title: "Michael Adeyeri: CEO, Busha. Building a single money app for Africa",
     description,
     images: [{ url: "/images/og-home.jpg", width: 1200, height: 630, alt: "Michael Adeyeri" }],
   },
