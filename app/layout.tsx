@@ -1,13 +1,18 @@
 import "./globals.css";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { GeistSerif } from "geist/font/serif";
 import { Analytics } from "./analytics";
-import { Header } from "./header";
-import { Footer } from "./footer";
+import { homeIntroScript } from "./home-intro";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans"
+const cravelo = localFont({
+  src: "../fonts/Cravelo DEMO.otf",
+  variable: "--font-cravelo",
+  display: "swap",
+  // missing glyphs (digits, punctuation) fall back to Geist Serif via tailwind's font-display stack
+  fallback: [],
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({
@@ -48,16 +53,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${geist.className} antialiased`}
+      className={`${GeistSerif.variable} ${cravelo.variable} ${geistMono.variable} font-serif antialiased`}
       suppressHydrationWarning={true}
     >
-      <body className="dark:text-gray-100 max-w-2xl m-auto">
-        <main className="p-6 pt-3 md:pt-6 min-h-screen">
-          <Header />
-          {children}
-        </main>
-
-        <Footer />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: homeIntroScript }} />
+      </head>
+      <body className="px-4 md:px-8">
+        <main>{children}</main>
         <Analytics />
       </body>
     </html>

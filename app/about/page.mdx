@@ -8,14 +8,27 @@ export const metadata = {
   }
 }
 
-# About
+<Masthead fit={40}>About</Masthead>
 
-<div className="rounded-full bg-gray-200 dark:bg-gray-700 mt-2 mb-5 w-48 h-48 mx-auto sm:float-right sm:ml-5 sm:mb-5 flex items-center justify-center text-6xl font-bold text-gray-500 dark:text-gray-300">
-  MA
+{/* desktop: photo and the first two paragraphs side by side; the photo stretches to the
+    text's height so they always end together, then the rest runs full width */}
+<div className="mt-4 md:mt-8 md:grid md:grid-cols-2 md:gap-8">
+
+<ScanlineImage
+  src="/images/IMG_5105.webp"
+  alt="Michael Adeyeri"
+  mono
+  className="w-full aspect-[3/2] mb-6 md:mb-0 md:aspect-auto md:h-full"
+/>
+
+<div className="drop-cap [&>p:first-child]:mt-0 md:[&>p:last-child]:mb-0">
+
+Michael Adeyeri is the CEO of [Busha](https://busha.co), where he and his team are building a single money app for Africa. He is a software engineer by training.
+
+Before Busha, Michael was an early employee at [Jumia](https://jumia.com) (then Kasuwa). He later ran a software agency that built products for major Nigerian banks, including UBA and Fidelity Bank, and served as CTO at Surebids, where his team built Suregifts and Sureremit.
+
 </div>
 
-I&rsquo;m a software engineer and the CEO of [Busha](https://busha.co), where we&rsquo;re building a single money app for Africa.
+</div>
 
-Before Busha, I was an early employee at [Jumia](https://jumia.com) (then Kasuwa). I later ran a software agency that built products for major Nigerian banks, including UBA and Fidelity Bank, and served as CTO at Surebids, where we built Suregifts and Sureremit.
-
-Earlier in my career, I built and exited two startups: [Formplus](https://formpl.us), a global form-building and data-collection tool, and Kraks, one of Nigeria&rsquo;s largest social and digital-media platforms.
+Earlier in his career, he built and exited two startups: [Formplus](https://formpl.us), a global form-building and data-collection tool, and Kraks, one of Nigeria&rsquo;s largest social and digital-media platforms.

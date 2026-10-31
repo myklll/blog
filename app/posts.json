@@ -3,12 +3,14 @@
     {
       "id": "introducing-ngnb",
       "date": "Oct 27, 2026",
-      "title": "Introducing NGNb: Building the Next Layer of Financial Infrastructure"
+      "title": "Introducing NGNb: Building the Next Layer of Financial Infrastructure",
+      "image": "/images/ngnb/hero-dark.png"
     },
     {
       "id": "busha-3-money-app-for-africa",
       "date": "Jan 1, 2026",
-      "title": "Busha 3.0: The Money App for Africa"
+      "title": "Busha 3.0: The Money App for Africa",
+      "image": "/images/busha-3/hero.png"
     }
   ]
 }

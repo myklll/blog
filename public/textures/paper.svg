@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480">
+  <!-- newsprint: flat paper (no relief), fine ink-dust grain plus a faint uneven tone; neutral grey, no tint -->
+  <filter id="paper" x="0" y="0" width="100%" height="100%">
+    <!-- fine grain: dark specks where the noise peaks -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="4" stitchTiles="stitch" result="grainNoise"/>
+    <feColorMatrix in="grainNoise" type="matrix" result="grain"
+      values="0 0 0 0 0.18
+              0 0 0 0 0.18
+              0 0 0 0 0.18
+              1.6 0 0 0 -0.62"/>
+    <!-- mottling: large soft patches of slightly darker pulp -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="9" stitchTiles="stitch" result="mottleNoise"/>
+    <feColorMatrix in="mottleNoise" type="matrix" result="mottle"
+      values="0 0 0 0 0.43
+              0 0 0 0 0.43
+              0 0 0 0 0.43
+              0.5 0 0 0 -0.16"/>
+    <feMerge>
+      <feMergeNode in="mottle"/>
+      <feMergeNode in="grain"/>
+    </feMerge>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#paper)"/>
+</svg>

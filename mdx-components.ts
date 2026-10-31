@@ -14,6 +14,8 @@ import { Figure } from "app/(post)/components/figure";
 import { Snippet } from "app/(post)/components/snippet";
 import { Caption } from "app/(post)/components/caption";
 import { Callout } from "app/(post)/components/callout";
+import { ScanlineImage } from "app/scanline-image";
+import { Masthead } from "app/masthead";
 import { YouTube } from "app/(post)/components/youtube";
 import { Ref, FootNotes, FootNote } from "app/(post)/components/footnotes";
 import { Blockquote as blockquote } from "app/(post)/components/blockquote";
@@ -56,6 +58,8 @@ export function useMDXComponents(components: {
     Snippet,
     Caption,
     Callout,
+    ScanlineImage,
+    Masthead,
     YouTube,
     Ref,
     FootNotes,

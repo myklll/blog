@@ -1,7 +1,7 @@
 export function Table({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-6 overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <table className="min-w-full divide-y divide-ink">
         {children}
       </table>
     </div>
@@ -10,7 +10,7 @@ export function Table({ children }: { children: React.ReactNode }) {
 
 export function THead({ children }: { children: React.ReactNode }) {
   return (
-    <thead className="bg-gray-50 dark:bg-gray-800">
+    <thead className="border-b border-ink">
       {children}
     </thead>
   );
@@ -18,7 +18,7 @@ export function THead({ children }: { children: React.ReactNode }) {
 
 export function TBody({ children }: { children: React.ReactNode }) {
   return (
-    <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-900 dark:divide-gray-700">
+    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
       {children}
     </tbody>
   );
@@ -30,7 +30,7 @@ export function TR({ children }: { children: React.ReactNode }) {
 
 export function TH({ children }: { children: React.ReactNode }) {
   return (
-    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
       {children}
     </th>
   );
@@ -38,7 +38,7 @@ export function TH({ children }: { children: React.ReactNode }) {
 
 export function TD({ children }: { children: React.ReactNode }) {
   return (
-    <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
+    <td className="px-6 py-4 text-sm text-ink">
       {children}
     </td>
   );

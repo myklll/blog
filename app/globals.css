@@ -7,33 +7,101 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
     color-scheme: light;
-    @apply bg-[#fcfcfc];
+
+    /* newsprint palette, as space-separated RGB so tailwind can apply alpha */
+    --paper: 255 255 255;
+    --ink: 27 26 23;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      @apply bg-[#1C1C1C];
+      --paper: 24 23 21;
+      --ink: 228 221 210;
     }
   }
 
-  /* Global text selection styles */
+  html {
+    @apply bg-paper text-ink;
+  }
+
+  /* hover arrows can float a little past the last footer link; never scroll sideways
+   * for that (clip, unlike hidden, doesn't break the sticky front page) */
+  body {
+    overflow-x: clip;
+  }
+
+  /* fluid scale: on desktop 1rem tracks the viewport width (16px at 1440px wide),
+   * so type, spacing and columns grow and shrink together like a printed page */
+  @media (min-width: 768px) {
+    html {
+      font-size: clamp(14px, 1.1111vw, 32px);
+    }
+  }
+
+  /* newsprint texture: see public/textures/paper.svg. multiplied over
+   * everything (images included) so the whole page reads as printed */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.45;
+    mix-blend-mode: multiply;
+    background-image: url("/textures/paper.svg");
+    background-size: 480px 480px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body::before {
+      mix-blend-mode: soft-light;
+      opacity: 0.35;
+    }
+  }
+
   ::selection {
-    @apply bg-black text-white;
+    @apply bg-ink text-paper;
   }
 
   ::-moz-selection {
-    @apply bg-black text-white;
+    @apply bg-ink text-paper;
+  }
+}
+
+@layer components {
+  /* home intro (home-intro.tsx): hide the page from first paint until the animations
+   * take over; if the script never runs, everything reappears after 3s */
+  html[data-intro="play"] [data-intro] {
+    visibility: hidden;
+    animation: intro-failsafe 0s 3s forwards;
   }
 
-  /* Dark mode selection styles */
-  @media (prefers-color-scheme: dark) {
-    ::selection {
-      @apply bg-white text-black;
+  @keyframes intro-failsafe {
+    to {
+      visibility: visible;
     }
+  }
 
-    ::-moz-selection {
-      @apply bg-white text-black;
+
+  /* link loops (a.tsx): hovering the link redraws its loop in one pen stroke */
+  @media (prefers-reduced-motion: no-preference) {
+    a:hover > .loop path {
+      animation: loop-draw 0.7s cubic-bezier(0.45, 0, 0.25, 1);
     }
+  }
+
+  @keyframes loop-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* newspaper drop cap on the opening paragraph of a post (or any .drop-cap block) */
+  :is(.post-body, .drop-cap) > p:first-of-type::first-letter {
+    @apply font-display float-left mr-2 mt-1 text-[4.6em] leading-[0.8];
   }
 }

@@ -6,8 +6,7 @@ export function Figure({ wide = false, children }) {
     ${
       wide
         ? `
-      bg-gray-100
-      dark:bg-[#111]
+      bg-ink/5
       relative
       left-[50%]
       right-[50%]

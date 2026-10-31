@@ -9,7 +9,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "comma-number": "^2.1.0",
-    "geist": "^1.5.1",
+    "geist": "^1.9.0",
     "image-size": "^1.0.2",
     "load-script": "^1.0.0",
     "next": "16.1.1",
@@ -20,8 +20,7 @@
     "react-wrap-balancer": "^1.1.1",
     "react-youtube": "^10.1.0",
     "recharts": "^3.2.1",
-    "swr": "^2.3.6",
-    "time-ago": "^0.2.1"
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@types/comma-number": "^2.1.0",

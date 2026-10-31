@@ -6,8 +6,7 @@ export const Snippet = ({ children, scroll = true, caption = null }) => (
       className={`
       p-4
       text-sm
-      bg-neutral-200 text-neutral-700
-      dark:bg-[#222] dark:text-gray-300
+      bg-ink/5 border border-ink font-mono
 
       ${
         scroll

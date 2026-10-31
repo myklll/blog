@@ -1,5 +1,7 @@
 import { Header } from "./header";
 import { getPosts } from "../get-posts";
+import { BackLink } from "../back-link";
+import { Footer } from "../footer";
 
 export const revalidate = 300;
 
@@ -7,10 +9,14 @@ export default async function Layout({ children }) {
   const posts = await getPosts();
 
   return (
-    <article className="text-gray-800 dark:text-gray-300 mb-10">
-      <Header posts={posts} />
+    <div className="max-w-2xl mx-auto pt-8 md:pt-14">
+      <article className="mb-10 text-lg leading-relaxed">
+        <BackLink />
+        <Header posts={posts} />
 
-      {children}
-    </article>
+        <div className="post-body">{children}</div>
+      </article>
+      <Footer />
+    </div>
   );
 }

@@ -2,7 +2,6 @@
 
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { ago } from "time-ago";
 import useSWR from "swr";
 import type { Post } from "@/app/get-posts";
 
@@ -28,50 +27,33 @@ export function Header({ posts }: { posts: Post[] }) {
   if (initialPost == null) return <></>;
 
   return (
-    <>
-      <h1 className="text-2xl font-bold mb-1 dark:text-gray-100">
+    <header className="mb-2">
+      <h1 className="font-display uppercase text-4xl md:text-6xl leading-[1.05] text-balance">
         {post.title}
       </h1>
 
-      <p className="font-mono flex text-xs text-neutral-500 dark:text-neutral-500">
-        <span className="flex-grow">
-          <span className="hidden md:inline">
-            <span>
-              <a
-                href="https://x.com/michael_adeyeri"
-                className="hover:text-neutral-800 dark:hover:text-neutral-400"
-                target="_blank"
-              >
-                @michael_adeyeri
-              </a>
-            </span>
+      <p className="flex justify-between gap-4 mt-6 py-2 border-y border-ink text-sm">
+        <span>{post.date}</span>
 
-            <span className="mx-2">|</span>
-          </span>
-
-          {/* since we will pre-render the relative time, over time it
-           * will diverge with what the user relative time is, so we suppress the warning.
-           * In practice this is not an issue because we revalidate the entire page over time
-           * and because we will move this to a server component with template.tsx at some point */}
-          <span suppressHydrationWarning={true}>
-            {post.date} ({ago(post.date, true)} ago)
-          </span>
+        <span>
+          By{" "}
+          <a
+            href="https://x.com/michael_adeyeri"
+            className="text-ink hover:underline underline-offset-4"
+            target="_blank"
+          >
+            Michael Adeyeri
+          </a>
         </span>
 
-        <span className="pr-1.5">
-          <Views
-            id={post.id}
-            mutate={mutate}
-            defaultValue={post.viewsFormatted}
-          />
-        </span>
+        <LogView id={post.id} mutate={mutate} />
       </p>
-    </>
+    </header>
   );
 }
 
-function Views({ id, mutate, defaultValue }) {
-  const views = defaultValue;
+// records the view in redis; counts are no longer shown on the site
+function LogView({ id, mutate }) {
   const didLogViewRef = useRef(false);
 
   useEffect(() => {
@@ -88,5 +70,5 @@ function Views({ id, mutate, defaultValue }) {
     }
   });
 
-  return <>{views != null ? <span>{views} views</span> : null}</>;
+  return null;
 }

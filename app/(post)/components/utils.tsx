@@ -18,10 +18,7 @@ export function withHeadingId(children) {
                 [span:hover_&]:visible
                 font-mono
                 font-normal
-                text-gray-400
-                hover:text-gray-600
-                dark:text-gray-500
-                dark:hover:text-gray-400
+                text-ink
               `}
               href={`#${match[1]}`}
             >
@@ -32,7 +29,7 @@ export function withHeadingId(children) {
               id={match[1]}
               className={`
               absolute
-              -top-[20px]
+              -top-[1.25rem]
             `}
             />
             {el.substring(0, match.index)}
