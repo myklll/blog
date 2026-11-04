@@ -157,14 +157,14 @@ function ArchiveLink({ post }: { post: Post }) {
         {"\u00a0"}
         <HoverDart />
       </span>
-      <span className="shrink-0 text-lg md:text-sm">{post.date}</span>
+      <span className="shrink-0 text-base md:text-sm">{post.date}</span>
     </Link>
   );
 }
 
 function Meta({ post }: { post: Post }) {
   return (
-    <p className="mt-5 text-lg md:text-sm">{post.date}</p>
+    <p className="mt-5 text-base md:text-sm">{post.date}</p>
   );
 }
 
