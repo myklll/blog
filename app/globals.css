@@ -92,10 +92,14 @@
   }
 
   @keyframes loop-draw {
+    /* the dash is only set while drawing: with a non-scaling stroke on a stretched loop,
+       Chrome measures it short and the loop rests with a gap */
     from {
+      stroke-dasharray: 1;
       stroke-dashoffset: 1;
     }
     to {
+      stroke-dasharray: 1;
       stroke-dashoffset: 0;
     }
   }
