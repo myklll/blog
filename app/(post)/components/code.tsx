@@ -2,6 +2,7 @@ export const Code = ({ children }) => {
   return (
     <code
       className={`
+        font-mono
         [p_&]:text-sm
         [p_&]:px-1
         [p_&]:py-0.5

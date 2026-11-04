@@ -32,7 +32,7 @@ export function Header({ posts }: { posts: Post[] }) {
         {post.title}
       </h1>
 
-      <p className="flex justify-between gap-4 mt-6 py-2 border-y border-ink text-sm">
+      <p className="flex justify-between gap-4 mt-6 py-2 border-y border-ink text-base md:text-sm">
         <span>{post.date}</span>
 
         <span>

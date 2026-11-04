@@ -60,16 +60,22 @@
     }
   }
 
-  /* Geist Serif ships a single weight, so the browser fakes bold by thickening outlines,
-   * which leaves seams inside overlapping glyphs (the bowl and stem of "d"). never
-   * synthesize it; bold text is set in the display face instead */
+  /* Geist Serif ships a single upright weight, so the browser fakes bold (thickening
+   * outlines, which leaves seams inside overlapping glyphs like the bowl and stem of "d")
+   * and italic (slanting the roman). never synthesize either: bold is set in the display
+   * face instead, and emphasis stays upright */
   body {
-    font-synthesis-weight: none;
+    font-synthesis: none;
   }
 
   strong,
   b {
     @apply font-display font-normal uppercase;
+  }
+
+  em,
+  i {
+    font-style: normal;
   }
 
   ::selection {
