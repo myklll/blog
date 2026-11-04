@@ -57,7 +57,7 @@ function Front() {
             mono
             hoverSelf
             intro="photo"
-            className="aspect-[16/10] md:aspect-auto md:h-full md:min-h-0"
+            className="aspect-[16/9] md:aspect-auto md:h-full md:min-h-0"
           />
           {/* desktop: the profile link drops to the bottom edge of the image; it's the only
            * link here, and the only thing that triggers the arrow spin */}
