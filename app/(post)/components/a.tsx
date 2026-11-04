@@ -80,7 +80,6 @@ function Loop({ seed }: { seed: string }) {
         fill="none"
         stroke="currentColor"
         strokeWidth="1"
-        strokeDasharray="1"
         vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
       />

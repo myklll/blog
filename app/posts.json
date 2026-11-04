@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "id": "naira-needs-more-than-one-token",
+      "date": "Nov 4, 2026",
+      "title": "Naira needs more than one token",
+      "image": "/images/more-than-one.png"
+    },
+    {
       "id": "introducing-ngnb",
       "date": "Oct 27, 2026",
       "title": "Introducing NGNb: Building the Next Layer of Financial Infrastructure",

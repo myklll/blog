@@ -164,7 +164,7 @@ function ArchiveLink({ post }: { post: Post }) {
 
 function Meta({ post }: { post: Post }) {
   return (
-    <p className="mt-2 text-lg md:text-sm">{post.date}</p>
+    <p className="mt-5 text-lg md:text-sm">{post.date}</p>
   );
 }
 
